@@ -43,7 +43,21 @@ let combineReducers = (reducers) => {
   }
 }
 
+/**
+ * 配合react-redux 的 connect
+ * @param {*} actions 
+ * @param {*} dispatch 
+ */ 
+let bindActionCreators = (actions, dispatch) => {
+  let ret = {}
+  for (let key in actions) {
+    ret[key] = (...args) => dispatch(actions[key](...args))
+  }
+  return ret
+}
+
 export {
   createStore, // 创建容器
-  combineReducers
+  combineReducers,
+  bindActionCreators
 }
