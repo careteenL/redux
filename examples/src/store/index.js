@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from '../redux/index'
+import { createStore, combineReducers } from 'redux'
 
 import counter from './reducers/counter'
 import todo from './reducers/todo'
