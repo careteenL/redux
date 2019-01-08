@@ -9,12 +9,15 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "cd examples && npm start"
+    "example": "node ./build/dev.js"
   },
   "keywords": [
     "redux",
     "react"
   ],
   "author": "CareteenL <15074806497@163.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "shelljs": "^0.8.3"
+  }
 }
