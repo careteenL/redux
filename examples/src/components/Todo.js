@@ -1,13 +1,21 @@
 import React, { Component } from 'react'
 
+import store from '../store/index'
+import * as actions from '../store/actions/todo'
+
 export default class Todo extends Component {
   state ={
-    list: []
+    list: store.getState().list
+  }
+  componentDidMount () {
+    store.subscribe(_ => {
+      this.setState({
+        list: store.getState().list
+      })
+    })
   }
   handleAddTodo = () => {
-    this.setState({
-      list: [this.input.value, ...this.state.list]
-    })
+    store.dispatch(actions.addTodo(this.input.value))
     this.input.value = ''
   }
   render() {
