@@ -27,6 +27,23 @@ let createStore = (reducer) => {
   }
 }
 
+/**
+ * 将多个仓库管理员合并
+ * @param {Object} reducers 多个仓库管理员
+ */ 
+let combineReducers = (reducers) => {
+  // 合并以后还是一个reducer
+  return (state = {}, action) => {
+    for (const key in reducers) {
+      if (reducers.hasOwnProperty(key)) {
+        state[key] = reducers[key](state[key], action)
+      }
+    }
+    return state
+  }
+}
+
 export {
-  createStore // 创建容器
+  createStore, // 创建容器
+  combineReducers
 }

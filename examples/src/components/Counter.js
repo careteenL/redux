@@ -5,12 +5,12 @@ import * as actions from '../store/actions/counter'
 
 export default class Counter extends Component {
   state = {
-    result: store.getState().number
+    result: store.getState().counter.number
   }
-  componentDidMount () {
+  componentDidMount () {    
     this.unsub = store.subscribe(_ => {
       this.setState({
-        result: store.getState().number
+        result: store.getState().counter.number
       })
     })
   }

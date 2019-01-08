@@ -5,12 +5,12 @@ import * as actions from '../store/actions/todo'
 
 export default class Todo extends Component {
   state ={
-    list: store.getState().list
+    list: store.getState().todo.list
   }
   componentDidMount () {
     store.subscribe(_ => {
       this.setState({
-        list: store.getState().list
+        list: store.getState().todo.list
       })
     })
   }

@@ -7,7 +7,7 @@ import Todo from './components/Todo'
 render(
   (
     <div>
-      {/* <Counter></Counter> */}
+      <Counter></Counter>
       <Todo></Todo>
     </div>
   ), document.getElementById('root')
