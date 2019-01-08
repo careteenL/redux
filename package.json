@@ -1,0 +1,20 @@
+{
+  "name": "@careteen/redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "cd examples && npm start"
+  },
+  "keywords": [
+    "redux",
+    "react"
+  ],
+  "author": "CareteenL <15074806497@163.com>",
+  "license": "MIT"
+}
