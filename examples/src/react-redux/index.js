@@ -22,7 +22,7 @@ class Provider extends Component {
  * @param {*} mapDispatchToProps 
  */ 
 const connect = (mapStateToProps, mapDispatchToProps) => {
-  return () => {
+  return (OriginComponent) => {
     class Proxy extends Component {
       state = this.props.store.getState()
       componentDidMount () {
@@ -41,11 +41,11 @@ const connect = (mapStateToProps, mapDispatchToProps) => {
           actions = bindActionCreators(mapDispatchToProps, this.props.store.dispatch)
         }
         return (
-          <Component
+          <OriginComponent
             { ...mapStateToProps(this.state) }
             { ...actions }
           >
-          </Component>
+          </OriginComponent>
         )
       }
     }
